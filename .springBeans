@@ -11,6 +11,7 @@
 		<config>src/main/webapp/WEB-INF/spring/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/hibernate.cfg.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
