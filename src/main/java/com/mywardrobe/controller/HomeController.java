@@ -1,13 +1,17 @@
-package com.mywardrobe.controllers;
+package com.mywardrobe.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mywardrobe.model.Item;
+
 @Controller
 public class HomeController {
 
-	@RequestMapping("/home")
+	@RequestMapping("/index")
 	public String goHome(){
-		return "home";
+		Item item = new Item();
+		
+		return "index";
 	}
 }
