@@ -1,7 +1,10 @@
 package com.mywardrobe.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +23,15 @@ public class ItemRepositoryImpl implements ItemRepository {
 		em.flush();
 		
 		return item;
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Item> loadAll() {
+		Query query = em.createQuery("Select g from Item g");
+		
+		List items = query.getResultList();
+		
+		return items;
 	}
 
 }

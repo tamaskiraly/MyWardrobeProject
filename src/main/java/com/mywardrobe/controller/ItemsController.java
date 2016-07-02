@@ -1,5 +1,7 @@
 package com.mywardrobe.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.mywardrobe.model.Item;
 import com.mywardrobe.model.User;
 import com.mywardrobe.service.ItemService;
-import com.mywardrobe.service.UserService;
 
 @Controller
 @SessionAttributes("item")
@@ -69,4 +70,14 @@ public class ItemsController {
 			
 			return "index";
 		}
+		
+		@RequestMapping(value = "getItems", method = RequestMethod.GET)
+		public String getItems(Model model){
+			List<Item> items = itemService.findAllItems();
+			
+			model.addAttribute("items", items);
+			
+			return "getItems";
+		}
+		
 }

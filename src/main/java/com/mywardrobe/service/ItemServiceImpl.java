@@ -1,5 +1,7 @@
 package com.mywardrobe.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,12 @@ public class ItemServiceImpl implements ItemService {
 	
 	public Item saveItem(Item item) {
 		return itemRepository.save(item);
+	}
+
+	@Override
+	public List<Item> findAllItems() {
+		
+		return itemRepository.loadAll();
 	}
 
 }
