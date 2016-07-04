@@ -67,6 +67,9 @@
         <a class="btn btn-primary" href="addUser.html">
           Add User »
         </a>
+		<a class="btn btn-warning" href="j_spring_security_logout" >
+			Log Out >>
+		</a>
       </div>
       <div>
       </div>

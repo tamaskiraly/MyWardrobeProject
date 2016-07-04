@@ -15,11 +15,13 @@ public class UserReposirotyImpl implements UserRepository {
 	
 	@Override
 	public User save(User user) {
+		System.out.println("In save user in USER REPOSITORY IMPL");
 		
 		em.persist(user);
+		System.out.println("Called em.persist");
 		
 		em.flush();
-		
+		System.out.println("Called em.flush");
 		return user;
 	}
 

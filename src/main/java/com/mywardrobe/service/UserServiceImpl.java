@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 	@Transactional
 	public User save(User user) {
-
+		System.out.println("In save USER method in USERSERVICEIMPL");
 		user = userRepository.save(user);
 		
 		return user;
