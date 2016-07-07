@@ -16,27 +16,27 @@
 	<table>
 	
 		<tr>
-			<th>ID</th><th>ITEM</th><th>USER</th>
+			<th>ID</th><th>Outfit name</th>
 		</tr>
 	
-		<c:forEach items="${items}" var="item">
+		<c:forEach items="${outfits}" var="outfit">
 		
 			<tr>
 				
-				<td>${item.id}</td><td>${item.name}</td><td>${item.username}</td>
+				<td>${outfit.id}</td><td>${outfit.name}</td>
 				
 				<td>
-<!-- 					<table> -->
-<!-- 						<tr> -->
-<!-- 							<th>User ID</th><th>First Name</th><th>Last Name</th> -->
-<!-- 						</tr> -->
-<%-- 						<c:forEach items="${item.id}" var="user"> --%>
-<!-- 							<tr> -->
-<%-- 								<td>${user}</td> --%>
-<!-- 							</tr> -->
-<%-- 						</c:forEach> --%>
+					<table> 
+ 						<tr> 
+ 							<th>Item ID</th><th>Item Name</th><th>Item username</th>
+ 						</tr> 
+						<c:forEach items="${outfit.items}" var="item">
+						<tr> 
+								<td>${item.id}</td><td>${item.name}</td><td>${item.username}</td>
+							</tr> 
+						</c:forEach>
 						
-<!-- 					</table> -->
+					</table> 
 				</td>
 				
 			</tr>

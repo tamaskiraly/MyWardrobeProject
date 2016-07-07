@@ -9,4 +9,6 @@ public interface ItemService {
 	Item saveItem(Item item);
 
 	List<Item> findAllItems();
+	
+	List<Item> findAllUserItems(String username);
 }

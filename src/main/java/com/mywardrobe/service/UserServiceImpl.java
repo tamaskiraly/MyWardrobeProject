@@ -1,5 +1,7 @@
 package com.mywardrobe.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,4 +22,9 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@Transactional
+	public List<User> getAllUsers(){
+		
+		return userRepository.findAll();
+	}
 }

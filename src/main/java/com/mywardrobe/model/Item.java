@@ -1,10 +1,16 @@
 package com.mywardrobe.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,11 +22,9 @@ public class Item {
 	@Column(name = "ITEM_ID")
 	private Long id;
 	
-	@ManyToOne
-	private User user;
+	@Column(name = "USERNAME")
+	private String username;
 	
-	@ManyToOne
-	private Outfit outfit;
 	
 	@Column(name = "NAME")
 	private String name;
@@ -42,13 +46,18 @@ public class Item {
 	
 	@Column(name = "SIZE")
 	private String size;
-
-	public Outfit getOutfit() {
-		return outfit;
+	
+	
+	private Set<Outfit> outfits = new HashSet<Outfit>(0);
+	
+	@Access(AccessType.PROPERTY)
+	@ManyToMany(mappedBy = "items")
+	public Set<Outfit> getOutfits() {
+		return outfits;
 	}
 
-	public void setOutfit(Outfit outfit) {
-		this.outfit = outfit;
+	public void setOutfits(Set<Outfit> outfits) {
+		this.outfits = outfits;
 	}
 
 	public String getCategory() {
@@ -87,8 +96,14 @@ public class Item {
 		return size;
 	}
 
-	public User getUser() {
-		return user;
+
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public void setCategory(String category) {
@@ -123,9 +138,7 @@ public class Item {
 		this.size = size;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 	public void setUserid(Long userid) {
 		this.id = userid;

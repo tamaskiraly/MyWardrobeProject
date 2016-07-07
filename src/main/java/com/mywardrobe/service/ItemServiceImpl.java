@@ -27,4 +27,9 @@ public class ItemServiceImpl implements ItemService {
 		return itemRepository.loadAll();
 	}
 
+	@Override
+	public List<Item> findAllUserItems(String username) {
+		return itemRepository.allUserItems(username);
+	}
+
 }

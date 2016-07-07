@@ -1,7 +1,10 @@
 package com.mywardrobe.repository;
 
-import com.mywardrobe.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository {
-	User save(User user);
+import com.mywardrobe.model.User;
+@Repository("userRepository")
+public interface UserRepository extends JpaRepository<User, Long>{
+	
 }

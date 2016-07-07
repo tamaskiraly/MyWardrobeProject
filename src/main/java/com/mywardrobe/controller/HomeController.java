@@ -8,7 +8,7 @@ import com.mywardrobe.model.Item;
 @Controller
 public class HomeController {
 
-	@RequestMapping("/index")
+	@RequestMapping(value={"/","/index"})
 	public String goHome(){
 		Item item = new Item();
 		

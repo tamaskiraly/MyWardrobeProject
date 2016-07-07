@@ -73,8 +73,8 @@
 			<label for="textinput1">
 	          Enter Name:
 	        </label>	
-			<form:input path="firstname" cssErrorClass="error" />
-			<form:errors path="firstname" cssClass="error" />
+			<form:input path="username" cssErrorClass="error" />
+			<form:errors path="username" cssClass="error" />
 			<br/>
 			<input type="submit" class="btn" value="Add User"/>
 	  </form:form>
